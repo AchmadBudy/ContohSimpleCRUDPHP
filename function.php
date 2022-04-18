@@ -4,10 +4,11 @@ class databasenya
     private $database = 'paw';
     private $username = 'root';
     private $password = '';
+    private $port = 3306;
 
     public function __construct()
     {
-        $this->koneksi = new mysqli("localhost", $this->username, $this->password, $this->database);
+        $this->koneksi = new mysqli("localhost", $this->username, $this->password, $this->database, $this->port);
 
         // Check connection
         if ($this->koneksi->connect_errno) {
