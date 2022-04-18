@@ -15,6 +15,7 @@ $datas = $koneksi->tambilData();
 </head>
 
 <body>
+    <a href="tambah.php">tambah</a>
     <table border="1px">
         <tr>
             <th>No</th>
