@@ -44,8 +44,35 @@ $datas = $koneksi->tambilData();
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
-            display: inline-block;
             font-size: 16px;
+            margin: 20px auto;
+        }
+
+        .card {
+            margin: 10px 200px;
+            padding: 8px 50px;
+        }
+
+        .button-sec {
+            background-color: #83BD75;
+            color: white;
+            padding: 14px 20px;
+            margin: 20px auto;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .button-third {
+            background-color: red;
+            color: white;
+            padding: 14px 20px;
+            margin: 20px auto;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
         }
     </style>
 
@@ -53,34 +80,41 @@ $datas = $koneksi->tambilData();
 </head>
 
 <body>
-
-    <table id="customers">
-        <tr>
-            <th>No</th>
-            <th>Nama Barang</th>
-            <th>Stock</th>
-            <th>Harga Beli</th>
-            <th>Harga Jual</th>
-            <th>Action</th>
-        </tr>
-        <?php $i = 1; ?>
-        <?php foreach ($datas as $data) : ?>
+    <h2 style="text-align: center;">Daftar Barang Toko Serba Ada</h2>
+    <div class="card">
+        <table id="customers">
             <tr>
-                <td><?= $i; ?></td>
-                <td><?= $data['nama_barang']; ?></td>
-                <td><?= $data['stok']; ?></td>
-                <td><?= number_format($data['harga_beli']); ?></td>
-                <td><?= number_format($data['harga_jual']); ?></td>
-                <td>
-                    <a href="ubah.php?id=<?= $data['id_barang']; ?>">Edit</a>
-                    <a href="hapus.php?id=<?= $data['id_barang']; ?>" onclick="alert('Apakah Yakin Untuk Dihapus?')">Hapus</a>
-                </td>
+                <th>No</th>
+                <th>Nama Barang</th>
+                <th>Stock</th>
+                <th>Harga Beli</th>
+                <th>Harga Jual</th>
+                <th>Action</th>
             </tr>
-            <?php $i++ ?>
-        <?php endforeach; ?>
-    </table>
+            <?php $i = 1; ?>
+            <?php foreach ($datas as $data) : ?>
+                <tr>
+                    <td><?= $i; ?></td>
+                    <td><?= $data['nama_barang']; ?></td>
+                    <td><?= $data['stok']; ?></td>
+                    <td><?= number_format($data['harga_beli']); ?></td>
+                    <td><?= number_format($data['harga_jual']); ?></td>
+                    <td>
+                        <div class="" style="margin: 20px 0;">
 
-    <a href="tambah.php" class="button">Tambah</a>
+                            <a href="ubah.php?id=<?= $data['id_barang']; ?>" class="button-sec">Edit</a>
+                            <a href="hapus.php?id=<?= $data['id_barang']; ?>" onclick="alert('Apakah Yakin Untuk Dihapus?')" class="button-third">Hapus</a>
+                        </div>
+                    </td>
+                </tr>
+                <?php $i++ ?>
+            <?php endforeach; ?>
+        </table>
+    </div>
+
+    <p style="text-align: center;">
+        <a href="tambah.php" class="button">Tambah</a>
+    </p>
 
 
 </body>
