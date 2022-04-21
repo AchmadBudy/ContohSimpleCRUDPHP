@@ -11,12 +11,50 @@ $datas = $koneksi->tambilData();
 <html>
 
 <head>
+
     <title>Tugas MySQl</title>
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+
+
 </head>
 
 <body>
-    <a href="tambah.php">tambah</a>
-    <table border="1px">
+
+    <table id="customers">
         <tr>
             <th>No</th>
             <th>Nama Barang</th>
@@ -41,6 +79,9 @@ $datas = $koneksi->tambilData();
             <?php $i++ ?>
         <?php endforeach; ?>
     </table>
+
+    <a href="tambah.php" class="button">Tambah</a>
+
 
 </body>
 
